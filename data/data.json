@@ -5,5 +5,12 @@
         "path":"music/azerbulbul-iyidegilim.mp3",
         "situation":"sad",
         "img":"https://wallpapercave.com/wp/wp7502030.jpg"
+    },
+    {
+        "name":"Pharrell Williams",
+        "trackName":"Happy",
+        "path":"music/Pharrell Williams - Happy (Lyrics).mp3",
+        "situation":"happy",
+        "img":"https://upload.wikimedia.org/wikipedia/commons/f/f4/Pharrell_Williams_at_The_Lion_King_European_Premiere_2019.png"
     }
 ]

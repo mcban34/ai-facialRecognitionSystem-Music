@@ -21,7 +21,7 @@ playPauseButton.addEventListener('click', () => {
 audioElement.addEventListener('timeupdate', () => {
     const currentTime = audioElement.currentTime;
     const duration = audioElement.duration;
-    
+
     // İlerleme çubuğunu güncelle
     seekBar.value = currentTime;
     seekBar.max = duration;
@@ -41,3 +41,16 @@ function formatTime(seconds) {
     const remainingSeconds = Math.floor(seconds % 60);
     return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const situation = urlParams.get('situation');
+    console.log(situation);
+    fetch("data/data.json")
+    .then(res => res.json())
+    .then(value => {
+        const musicFilter = value.filter(elemet => elemet.situation==situation) 
+        audioElement.src=musicFilter[0].path
+    })
+})

@@ -1,13 +1,13 @@
 const video = document.getElementById("video");
 
 const statusInformation = {
-  angry:"Sinirli",
-  disgusted:"İğrenmiş",
-  fearful:"Korkunç",
-  happy:"Mutlu",
-  neutral:"Doğal",
-  sad:"Üzgün",
-  surprised:"Şaşkın"
+  angry: "Sinirli",
+  disgusted: "İğrenmiş",
+  fearful: "Korkunç",
+  happy: "Mutlu",
+  neutral: "Doğal",
+  sad: "Üzgün",
+  surprised: "Şaşkın"
 }
 
 Promise.all([
@@ -25,7 +25,7 @@ function startCamera() {
     stream => (video.srcObject = stream),
     err => console.log(err)
   );
-}  
+}
 
 let detections = []
 let maxEmotion = '';
@@ -46,7 +46,7 @@ video.addEventListener("play", () => {
       .withFaceLandmarks()
       .withFaceExpressions();
     let maxScore = 0;
-    if(detections && detections.length > 0){
+    if (detections && detections.length > 0) {
       detections = detections[0].expressions
       for (const emotion in detections) {
         if (detections[emotion] > maxScore) {
@@ -54,12 +54,12 @@ video.addEventListener("play", () => {
           maxScore = detections[emotion];
         }
       }
-      document.querySelector(".situation").innerHTML=`Şuanki Durumunuz : ${statusInformation[maxEmotion]}`
-      document.querySelector("button").disabled=false;
+      document.querySelector(".situation").innerHTML = `Şuanki Durumunuz : ${statusInformation[maxEmotion]}`
+      document.querySelector("button").disabled = false;
     }
-    else{
-      document.querySelector(".situation").innerHTML=`Şuanki Durumunuz : Yüzünüz Algılanamadı`
-      document.querySelector("button").disabled=true;
+    else {
+      document.querySelector(".situation").innerHTML = `Şuanki Durumunuz : Yüzünüz Algılanamadı`
+      document.querySelector("button").disabled = true;
     }
   }, 500);
 });
@@ -67,6 +67,6 @@ video.addEventListener("play", () => {
 
 document.querySelector(".tikla").addEventListener("click", function () {
   console.log(detections);
-  window.location.href=`play-music.html?situation?=${maxEmotion}`
+  window.location.href = `play-music.html?situation=${maxEmotion}`;
   console.log(maxEmotion);
 })
