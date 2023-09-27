@@ -1,16 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Müzik Çalma</title>
+    <style>
+        #seekBar{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            bottom: 0;
+        }
+        #currentTime{
+            position: absolute;
+            left: 60%;
+            top: 50%;
+        }
+    </style>
 </head>
+
 <body>
-    <audio id="audioPlayer" src=""></audio>
-    <button id="playPauseButton">Çal</button>
     <input type="range" id="seekBar" value="0" min="0" step="1">
     <span id="currentTime">0:00</span>
+    <audio id="audioPlayer" src=""></audio>
+    <img src="" class="test" alt="">
+    <!-- <button id="playPauseButton">Çal</button> -->
 
     <script src="scripts/play-music.js"></script>
 </body>
+
 </html>
