@@ -2,6 +2,7 @@ const audioElement = document.getElementById('audioPlayer');
 const playPauseButton = document.getElementById('playPauseButton');
 const seekBar = document.getElementById('seekBar');
 const currentTimeDisplay = document.getElementById('currentTime');
+const musicListHtml = document.querySelector(".musicList")
 
 let isPlaying = false;
 
@@ -30,9 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 playButton.addEventListener("click", () => {
                     if (!isPlaying) {
-                        audioElement.currentTime = 0;
-                        seekBar.value = 0;
-
                         const allAudioElements = document.querySelectorAll('audio');
                         allAudioElements.forEach(element => {
                             if (element !== audioElement) {
@@ -68,11 +66,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     audioElement.currentTime = seekBar.value;
                 });
 
-                document.body.appendChild(audioElement);
-                document.body.appendChild(playButton);
-                document.body.appendChild(seekBar);
-                document.body.appendChild(currentTimeDisplay);
-                document.body.appendChild(artTitle)
+                musicListHtml.appendChild(audioElement);
+                musicListHtml.appendChild(playButton);
+                musicListHtml.appendChild(artTitle)
+               
             });
         });
 });
