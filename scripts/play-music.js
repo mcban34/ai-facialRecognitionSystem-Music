@@ -4,6 +4,16 @@ const seekBar = document.getElementById('seekBar');
 const currentTimeDisplay = document.getElementById('currentTime');
 const musicListHtml = document.querySelector(".musicList")
 
+const statusInformation = {
+    angry: "Sinirli",
+    disgusted: "İğrenmiş",
+    fearful: "Korkunç",
+    happy: "Mutlu",
+    neutral: "Doğal",
+    sad: "Üzgün",
+    surprised: "Şaşkın"
+}
+
 let isPlaying = false;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -22,12 +32,32 @@ document.addEventListener("DOMContentLoaded", () => {
                 const audioElement = document.createElement("audio");
                 audioElement.src = music.path;
 
-                let isPlaying = false;
-                const playButton = document.createElement("button");
-                playButton.textContent = "Çal";
+                //!parçanın toplam süresini hesapla
+                let durationDisplay = document.createElement("p");
+                durationDisplay.className="durationDisplay"
+                audioElement.addEventListener('loadedmetadata', () => {
+                    const totalDuration = audioElement.duration;
+                    const totalDurationMinutes = Math.floor(totalDuration / 60);
+                    const totalDurationSeconds = Math.floor(totalDuration % 60);
+                    durationDisplay.innerHTML = `${totalDurationMinutes}:${totalDurationSeconds < 10 ? '0' : ''}${totalDurationSeconds}`;
+                });
 
-                const artTitle = document.createElement("h3")
+                let isPlaying = false;
+
+                const musicListParentDiv = document.createElement("div")
+                musicListParentDiv.className="musicListParentDiv"
+
+                const playButton = document.createElement("button");
+                playButton.innerHTML = `<i class="bi bi-play-fill"></i>`;
+                playButton.className="playButton"
+
+                const artTitle = document.createElement("h6")
                 artTitle.innerHTML = music.name
+                artTitle.className="artTitle"
+
+                const trackName = document.createElement("p")
+                trackName.innerHTML = music.trackName
+                trackName.className="trackName"
 
                 playButton.addEventListener("click", () => {
                     if (!isPlaying) {
@@ -39,15 +69,15 @@ document.addEventListener("DOMContentLoaded", () => {
                         });
 
                         if (currentPlayingButton) {
-                            currentPlayingButton.textContent = 'Çal';
+                            currentPlayingButton.innerHTML = `<i class="bi bi-play-fill"></i>`;
                         }
 
                         audioElement.play();
-                        playButton.textContent = 'Duraklat';
+                        playButton.innerHTML = `<i class="bi bi-stop-fill"></i>`;
                         currentPlayingButton = playButton;
                     } else {
                         audioElement.pause();
-                        playButton.textContent = 'Çal';
+                        playButton.innerHTML = `<i class="bi bi-play-fill"></i>`;
                     }
                     isPlaying = !isPlaying;
                 });
@@ -59,19 +89,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     seekBar.value = currentTime;
                     seekBar.max = duration;
 
-                    currentTimeDisplay.textContent = formatTime(currentTime);
+                    currentTimeDisplay.innerHTML = formatTime(currentTime);
                 });
 
                 seekBar.addEventListener('input', () => {
                     audioElement.currentTime = seekBar.value;
                 });
 
-                musicListHtml.appendChild(audioElement);
-                musicListHtml.appendChild(playButton);
-                musicListHtml.appendChild(artTitle)
-               
+                musicListParentDiv.append(audioElement,playButton,artTitle,trackName,durationDisplay)
+                musicListHtml.appendChild(musicListParentDiv)
             });
         });
+    document.querySelector(".mucisTitleContent").innerHTML = `${statusInformation[situation]}`
 });
 
 function formatTime(seconds) {

@@ -1,5 +1,23 @@
+body {
+  background-color: #111315;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+.mucisTitle {
+  background: linear-gradient(90deg, #B168B5, #846FDB);
+  border-radius: 1rem;
+  padding: 4rem 1rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+
 .musicRange {
-  background-color: rgb(0, 0, 0);
+  background: #3d3d3d;
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -13,17 +31,42 @@
   width: 50%;
   height: 4px;
   border-radius: 5px;
-  background-color: #383838;
+  background-color: #bebebe;
   outline: none;
   margin-right: 10px;
+}
+@media screen and (max-width: 600px) {
+  .musicRange input {
+    width: 100%;
+  }
 }
 .musicRange input::-webkit-slider-thumb {
   -webkit-appearance: none;
   width: 15px;
   height: 15px;
   border-radius: 50%;
-  background-color: #5e5e5e;
+  background-color: #ffffff;
 }
 .musicRange span {
   color: white;
+}
+
+.musicList {
+  margin-top: 2rem;
+}
+.musicList .musicListParentDiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+.musicList .musicListParentDiv button {
+  width: 13%;
+  border-radius: 5px;
+  background: linear-gradient(90deg, #B168B5, #846FDB);
+  border: none;
+  color: white;
+}
+.musicList .musicListParentDiv .artTitle, .musicList .musicListParentDiv .trackName {
+  width: 35%;
 }/*# sourceMappingURL=play-music.css.map */
