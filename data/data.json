@@ -1,16 +1,79 @@
 [
     {
-        "name":"Azer Bülbül",
-        "trackName":"İyi Değilim",
-        "path":"music/azerbulbul-iyidegilim.mp3",
-        "situation":"sad",
-        "img":"https://wallpapercave.com/wp/wp7502030.jpg"
+        "name": "Lapsekili Tayfur",
+        "trackName": "Geceler",
+        "path": "music/lapsekili_tayfur-geceler.mp3",
+        "situation": "sad",
+        "img": "https://i.scdn.co/image/ab67616d0000b273ec8f564258c33f8f3d2f8c93"
     },
     {
-        "name":"Pharrell Williams",
-        "trackName":"Happy",
-        "path":"music/Pharrell Williams - Happy (Lyrics).mp3",
-        "situation":"happy",
-        "img":"https://upload.wikimedia.org/wikipedia/commons/f/f4/Pharrell_Williams_at_The_Lion_King_European_Premiere_2019.png"
+        "name": "Azer Bülbül",
+        "trackName": "İyi Değilim",
+        "path": "music/azerbulbul-iyidegilim.mp3",
+        "situation": "sad",
+        "img": "https://wallpapercave.com/wp/wp7502030.jpg"
+    },
+    {
+        "name": "Selahattin Özdemir",
+        "trackName": "Yaşarken Ölenler İçin",
+        "path": "music/Yaşarken Ölenler İçin.mp3",
+        "situation": "sad",
+        "img": "https://upload.wikimedia.org/wikipedia/tr/thumb/9/9d/Selahattin_%C3%B6zdemir.jpg/220px-Selahattin_%C3%B6zdemir.jpg"
+    },
+    {
+        "name": "Hakan Taşıyan",
+        "trackName": "Sensiz İki Gün",
+        "path": "music/hakantasiyan.mp3",
+        "situation": "sad",
+        "img": "https://i.scdn.co/image/ab67616d0000b273f4658fd087511838f2f40d9b"
+    },
+    {
+        "name": "Güllü",
+        "trackName": "Kopamam Senden",
+        "path": "music/gullu_kopamam-senden.mp3",
+        "situation": "sad",
+        "img": "https://images.genius.com/a1f72efbdf24847ac8c64f1afb13841d.1000x1000x1.jpg"
+    },
+    {
+        "name": "Pharrell Williams",
+        "trackName": "Happy",
+        "path": "music/Pharrell Williams - Happy (Lyrics).mp3",
+        "situation": "happy",
+        "img": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Pharrell_Williams_at_The_Lion_King_European_Premiere_2019.png"
+    },
+    {
+        "name": "Kenan Doğulu",
+        "trackName": "Doktor",
+        "path": "music/kenanDoguluDoktor.mp3",
+        "situation": "happy",
+        "img": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQuABG20X3jLdEjwGmu4aDxRJH1z-haguvN74FN8H4aEkvVBi-s"
+    },
+    {
+        "name": "Simge",
+        "trackName": "Aşkın Olayım",
+        "path": "music/simga_askinOlayim.mp3",
+        "situation": "happy",
+        "img": "https://i.ytimg.com/vi/wUi56FusXSo/sddefault.jpg"
+    },
+    {
+        "name": "Charlie Cunningham",
+        "trackName": "Permanent Way",
+        "path": "music/Charlie Cunningham - Permanent Way.mp3",
+        "situation": "neutral",
+        "img": "https://pop-mag.com/wp-content/uploads/popmag000654-charliecunningham.jpg"
+    },
+    {
+        "name": "Rhye",
+        "trackName": "Stay Safe",
+        "path": "music/Rhye - Stay Safe.mp3",
+        "situation": "neutral",
+        "img": "https://media.pitchfork.com/photos/5f98734a87cdfc873e5aae59/4:3/w_1332,h_999,c_limit/Rhye.jpg"
+    },
+    {
+        "name": "Erkin Koray",
+        "trackName": "Şaşkın",
+        "path": "music/Erkin Koray - Şaşkın.mp3",
+        "situation": "surprised",
+        "img": "https://upload.wikimedia.org/wikipedia/tr/1/17/Erkin_Koray.jpg"
     }
 ]

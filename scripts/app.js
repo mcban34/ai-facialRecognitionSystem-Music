@@ -61,11 +61,11 @@ video.addEventListener("play", () => {
       document.querySelector(".situation").innerHTML = `Şuanki Durumunuz : Yüzünüz Algılanamadı`
       document.querySelector("button").disabled = true;
     }
-  }, 500);
+  }, 600);
 });
 
 
-document.querySelector(".tikla").addEventListener("click", function () {
+document.querySelector(".startListening").addEventListener("click", function () {
   console.log(detections);
   window.location.href = `play-music.html?situation=${maxEmotion}`;
   console.log(maxEmotion);

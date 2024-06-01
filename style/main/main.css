@@ -1,0 +1,13 @@
+body {
+  background-color: #111315;
+  color: white;
+}
+
+.startListening {
+  background: linear-gradient(90deg, #B168B5, #846FDB);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 0.5rem 2rem;
+  border: transparent;
+  color: white;
+}/*# sourceMappingURL=main.css.map */
